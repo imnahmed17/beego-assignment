@@ -11,6 +11,8 @@
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-bold-rounded/css/uicons-bold-rounded.css'>
         <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
         <link rel="stylesheet" href="static/css/styles.css">
+        <link rel="stylesheet" href="static/css/t-datepicker.min.css">
+        <link rel="stylesheet" href="static/css/t-datepicker-main.css">
     </head>
 
     <body>
@@ -18,22 +20,22 @@
         <section>
             <div class="h-[320px] bg-[url(https://cdn6.agoda.net/images/MVC/default/background_image/illustrations/bg-agoda-homepage.png)] bg-center bg-no-repeat bg-cover">
                 <div class="max-w-6xl mx-auto">
-                    <div class="pt-3 w-1/2 absolute top-56 inset-x-1/4 z-20 bg-white rounded-lg flex justify-center gap-6 shadow-lg">
+                    <div class="pt-3 w-1/3 absolute top-56 inset-x-1/3 z-20 bg-white rounded-lg flex justify-center gap-6 shadow-lg">
                         <div class="pb-2 flex items-center gap-1 cursor-pointer tab-item active" onclick="openTab('tab1')">
                             <i class="fi fi-ss-hotel text-lg flex items-center"></i>
                             <h6 class="tracking-wide">Hotels &amp; Homes</h6>
                         </div>
                         <div class="pb-2 flex items-center gap-1.5 cursor-pointer tab-item" onclick="openTab('tab2')">
-                            <i class="fi fi-ss-house-chimney text-lg flex items-center"></i>
-                            <h6 class="tracking-wide">Private stays</h6>
+                            <i class="fi fi-ss-restaurant text-lg flex items-center"></i>
+                            <h6 class="tracking-wide">Restaurants</h6>
                         </div>
                         <div>
-                            <div class="absolute -top-3.5 pl-10">
+                            <div class="absolute -top-3.5 pl-6">
                                 <span class="p-1 bg-[#E12D2D] text-[10px] text-white rounded-sm">New!</span>
                             </div>
                             <div class="pb-2 flex items-center gap-1.5 cursor-pointer tab-item" onclick="openTab('tab3')">
-                                <i class="fi fi-ss-calendar text-lg flex items-center"></i>
-                                <h6 class="tracking-wide">Long stays</h6>
+                                <i class="fi fi-ss-plane-departure text-lg flex items-center"></i>
+                                <h6 class="tracking-wide">Flights</h6>
                             </div>
                         </div>
                     </div>
@@ -52,6 +54,9 @@
         </footer>
         <div class="backdrop"></div>
 
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="static/js/t-datepicker.min.js"></script>
+        <script src="static/js/t-datepicker.js"></script>
         <script src="/static/js/home-tab.js"></script>
         <script src="/static/js/home-guest.js"></script>
     </body>

@@ -10,38 +10,72 @@
                 <span class="absolute left-0 top-5">
                     <i class="fi fi-rr-search text-2xl text-slate-500 pl-5"></i>
                 </span>
-                <input type="text" placeholder="Enter a destination or property" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-16" autocomplete="off">
+                <input type="text" name="tab1Location" placeholder="Enter a destination or property" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-16" autocomplete="off">
             </label>
             <div class="flex gap-4">
                 <label class="mt-4 w-1/2 relative block">
-                    <span class="absolute left-0 top-5"><i class="fi fi-rs-search text-2xl pl-5"></i></span>
-                    <input type="text" placeholder="Dhaka" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 placeholder:text-slate-800 pl-16">
+                    <div class="t-datepicker rounded-md outline outline-1 outline-slate-300 text-base">
+                        <div class="t-check-in bg-white py-3"></div>
+                        <div class="t-check-out bg-white py-3"></div>
+                    </div>
                 </label>
-                <div class="mt-4 w-1/2">
+                <div class="mt-4 w-1/2 relative">
                     <label class="relative block">
                         <span class="absolute left-0 top-5">
                             <i class="fi fi-rr-users text-2xl text-slate-500 pl-5"></i>
                         </span>
-                        <input id="tab1GuestInput" type="text" placeholder="2 adults 1 room" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-16" readonly>
+                        <input id="tab1GuestInput" type="text" name="tab1Guests" placeholder="2 adults 1 room" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-16" readonly>
                         <span class="absolute right-0 top-5">
                             <i class="fi fi-rr-angle-small-down text-xl pr-5"></i>
                         </span>
                     </label>
-                    <div id="tab1GuestDiv" class="hidden">
-                        <div class="px-5 py-3 w-3/4 bg-white">
-                            <div class="flex justify-between items-center">
-                                <h3 class="font-medium">Room</h3>
-                                <div class="flex items-center gap-6">
-                                    <button class="text-[#5392F9] rounded-full border-2 border-[#5392F9] h-6 w-6" id="tab1RoomMinusBtn">
-                                        <i class="fi fi-rs-minus-small flex justify-center items-start"></i>
-                                    </button>
-                                    <h3 id="tab1RoomValue" class="text-xl font-semibold"></h3>
-                                    <button class="text-[#5392F9] rounded-full border-2 border-[#5392F9] h-6 w-6" id="tab1RoomPlusBtn">
-                                        <i class="fi fi-rs-plus-small flex justify-center items-start"></i>
-                                    </button>
-                                </div>
+                    <div id="tab1GuestDiv" class="px-7 py-4 absolute top-[70px] w-3/4 bg-white border rounded-md shadow-md hidden z-20">
+                        <!-- room info update -->
+                        <div class="mb-5 flex justify-between items-center">
+                            <h3 class="font-medium">Room</h3>
+                            <div class="flex items-center gap-6">
+                                <button type="button" class="text-gray-400 rounded-full border-2 border-gray-400 h-6 w-6" id="tab1RoomMinusBtn" disabled>
+                                    <i class="fi fi-rs-minus-small flex justify-center items-start"></i>
+                                </button>
+                                <h3 id="tab1RoomValue" class="text-xl font-semibold"></h3>
+                                <button type="button" class="text-[#5392F9] rounded-full border-2 border-[#5392F9] h-6 w-6" id="tab1RoomPlusBtn">
+                                    <i class="fi fi-rs-plus-small flex justify-center items-start"></i>
+                                </button>
                             </div>
-                            <div class="h-10"></div>
+                        </div>
+                        <!-- adult info update -->
+                        <div class="mb-2.5 flex justify-between items-center">
+                            <h3>
+                                <span class="font-medium">Adult</span> 
+                                <br> 
+                                <span class="text-xs text-gray-600">Ages 18 or above</span>
+                            </h3>
+                            <div class="flex items-center gap-6">
+                                <button type="button" class="text-gray-400 rounded-full border-2 border-gray-400 h-6 w-6" id="tab1AdultMinusBtn" disabled>
+                                    <i class="fi fi-rs-minus-small flex justify-center items-start"></i>
+                                </button>
+                                <h3 id="tab1AdultValue" class="text-xl font-semibold"></h3>
+                                <button type="button" class="text-[#5392F9] rounded-full border-2 border-[#5392F9] h-6 w-6" id="tab1AdultPlusBtn">
+                                    <i class="fi fi-rs-plus-small flex justify-center items-start"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- child info update -->
+                        <div class="flex justify-between items-center">
+                            <h3>
+                                <span class="font-medium">Children</span> 
+                                <br> 
+                                <span class="text-xs text-gray-600">Ages 0-17</span>
+                            </h3>
+                            <div class="flex items-center gap-6">
+                                <button type="button" class="text-gray-400 rounded-full border-2 border-gray-400 h-6 w-6" id="tab1ChildMinusBtn" disabled>
+                                    <i class="fi fi-rs-minus-small flex justify-center items-start"></i>
+                                </button>
+                                <h3 id="tab1ChildValue" class="text-xl font-semibold"></h3>
+                                <button type="button" class="text-[#5392F9] rounded-full border-2 border-[#5392F9] h-6 w-6" id="tab1ChildPlusBtn">
+                                    <i class="fi fi-rs-plus-small flex justify-center items-start"></i>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -54,7 +88,7 @@
                 </div>
             </div>
             <div class="flex justify-center">
-                <button class="py-4 w-1/2 absolute -bottom-7 bg-[#5392F9] hover:bg-blue-400 text-white text-xl uppercase rounded-md shadow-md">Search</button>
+                <button type="submit" class="py-4 w-1/2 absolute -bottom-7 bg-[#5392F9] hover:bg-blue-400 text-white text-xl uppercase rounded-md shadow-md">Search</button>
             </div>
         </form>
     </div>

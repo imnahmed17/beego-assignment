@@ -2,3 +2,9 @@
     border-bottom: 4px solid #5392F9;
     color: #5392F9;
 }
+
+.t-dates {
+    display: flex !important;
+    gap: 4px;
+    font-weight: 500;
+}
