@@ -5,7 +5,7 @@
         <h4 class="mb-4 text-xl tracking-wide">Get the best prices on 2,000,000+ properties, worldwide</h4>
     </div>
     <div class="px-12 mt-11 w-full bg-[#f8f7f9] rounded-2xl shadow-lg">
-        <form class="pt-10">
+        <form class="pt-10" action="/search" method="post">
             <label class="w-full relative block">
                 <span class="absolute left-0 top-5">
                     <i class="fi fi-rr-search text-2xl text-slate-500 pl-5"></i>
@@ -26,7 +26,7 @@
                         </span>
                         <input id="tab1GuestInput" type="text" name="tab1Guests" placeholder="2 adults 1 room" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-16" readonly>
                         <span class="absolute right-0 top-5">
-                            <i class="fi fi-rr-angle-small-down text-xl pr-5"></i>
+                            <i class="fi fi-rr-angle-small-down text-xl text-slate-500 pr-5"></i>
                         </span>
                     </label>
                     <div id="tab1GuestDiv" class="px-7 py-4 absolute top-[70px] w-3/4 bg-white border rounded-md shadow-md hidden z-20">
@@ -42,6 +42,7 @@
                                     <i class="fi fi-rs-plus-small flex justify-center items-start"></i>
                                 </button>
                             </div>
+                            <input id="tab1RoomInput" type="hidden" name="tab1Rooms" value="1">
                         </div>
                         <!-- adult info update -->
                         <div class="mb-2.5 flex justify-between items-center">
@@ -59,23 +60,7 @@
                                     <i class="fi fi-rs-plus-small flex justify-center items-start"></i>
                                 </button>
                             </div>
-                        </div>
-                        <!-- child info update -->
-                        <div class="flex justify-between items-center">
-                            <h3>
-                                <span class="font-medium">Children</span> 
-                                <br> 
-                                <span class="text-xs text-gray-600">Ages 0-17</span>
-                            </h3>
-                            <div class="flex items-center gap-6">
-                                <button type="button" class="text-gray-400 rounded-full border-2 border-gray-400 h-6 w-6" id="tab1ChildMinusBtn" disabled>
-                                    <i class="fi fi-rs-minus-small flex justify-center items-start"></i>
-                                </button>
-                                <h3 id="tab1ChildValue" class="text-xl font-semibold"></h3>
-                                <button type="button" class="text-[#5392F9] rounded-full border-2 border-[#5392F9] h-6 w-6" id="tab1ChildPlusBtn">
-                                    <i class="fi fi-rs-plus-small flex justify-center items-start"></i>
-                                </button>
-                            </div>
+                            <input id="tab1AdultInput" type="hidden" name="tab1Adults" value="1">
                         </div>
                     </div>
                 </div>

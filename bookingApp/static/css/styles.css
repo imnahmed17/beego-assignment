@@ -5,6 +5,7 @@
 
 .t-dates {
     display: flex !important;
+    align-items: center;
     gap: 4px;
     font-weight: 500;
 }
