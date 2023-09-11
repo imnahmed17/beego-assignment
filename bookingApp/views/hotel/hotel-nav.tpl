@@ -1,7 +1,7 @@
 <nav class="py-5 bg-[#013573]">
     <form class="max-w-7xl mx-auto flex gap-4" action="/search" method="post">
         <label class="w-[30%] relative block">
-            <input type="text" name="tab1Location" placeholder="Enter a destination or property" class="p-3 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500" autocomplete="off">
+            <input type="text" name="tab1Location" placeholder="Enter a destination or property" value="{{ .Location }}" class="p-3 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500" autocomplete="off">
             <span class="absolute right-0 top-3">
                 <i class="fi fi-rr-search text-2xl text-[#013573] pr-3"></i>
             </span>
@@ -14,15 +14,15 @@
         </label>
         <div class="w-[30%] relative">
             <label class="relative block">
-                <span class="absolute left-0 top-2.5">
-                    <i class="fi fi-rr-users text-2xl text-[#013573] pl-5"></i>
+                <span class="absolute left-0 top-3">
+                    <i class="fi fi-rr-users text-2xl text-[#013573] pl-3.5"></i>
                 </span>
                 <input id="tab1GuestInput" type="text" name="tab1Guests" placeholder="2 adults 1 room" class="p-3 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-16" readonly>
                 <span class="absolute right-0 top-3">
-                    <i class="fi fi-rr-angle-small-down text-xl text-[#013573] pr-5"></i>
+                    <i class="fi fi-rr-angle-small-down text-xl text-[#013573] pr-2.5"></i>
                 </span>
             </label>
-            <div id="tab1GuestDiv" class="px-7 py-4 absolute top-[55px] w-3/4 bg-white border rounded-md shadow-md hidden z-20">
+            <div id="tab1GuestDiv" class="px-5 py-3 absolute top-[52px] w-full lg:w-3/4 bg-white border rounded-md shadow-md hidden z-20">
                 <!-- room info update -->
                 <div class="mb-5 flex justify-between items-center">
                     <h3 class="font-medium">Room</h3>
@@ -38,7 +38,7 @@
                     <input id="tab1RoomInput" type="hidden" name="tab1Rooms" value="1">
                 </div>
                 <!-- adult info update -->
-                <div class="mb-2.5 flex justify-between items-center">
+                <div class="mb-1.5 flex justify-between items-center">
                     <h3>
                         <span class="font-medium">Adult</span> 
                         <br> 
@@ -57,6 +57,6 @@
                 </div>
             </div>
         </div>
-        <button type="submit" class="w-[10%] bg-[#01CD92] hover:bg-[#3BB995] text-white text-xl font-semibold rounded-md shadow-md">Search</button>
+        <button type="submit" class="w-[10%] bg-[#00CD92] hover:bg-[#3BB995] text-white text-xl font-semibold rounded-md shadow-md">Search</button>
     </form>
 </nav>

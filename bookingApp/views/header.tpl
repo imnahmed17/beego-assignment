@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="static/css/t-datepicker-main.css">
 </head>
 <body>
-<header>
+<header class="hidden md:block">
     <nav class="max-w-7xl mx-auto h-16 flex gap-12 items-center">
         <div class="w-[80px] flex items-center">
             <a href="/">
