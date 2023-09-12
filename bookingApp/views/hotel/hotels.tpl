@@ -2,12 +2,18 @@
 
 {{ template "hotel/hotel-nav.tpl" . }}
 
-<h2 class="mt-3 text-3xl font-medium text-center text-[#013573]">Vacation Rentals in <span class="uppercase">{{ .Location }}</span></h2>
+<h2 class="mt-3 text-3xl font-medium text-center text-[#013573]">
+    Vacation Rentals in {{ if lt (len .Location) 4 }}
+        <span class="uppercase">{{ .Location }}</span>
+    {{ else }}
+        <span class="capitalize">{{ .Location }}</span>
+    {{ end }}
+</h2>
 
 <div class="max-w-6xl mx-auto">
     <div class="px-2 pt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {{ range .Hotels }}
-        <div class="border rounded-lg hover:shadow-lg transition-transform duration-200 ease-in-out hover:scale-105">
+        <div class="border rounded-lg hover:shadow-lg">
             <div class="relative">
                 <img src="https://cf.bstatic.com{{ .BasicPropertyData.Photos.Main.HighResUrl.RelativeUrl }}" class="w-full h-[209px] rounded-t-lg" alt="" loading="lazy">
                 <span class="absolute left-2 bottom-2 px-3 py-1 rounded-md font-medium bg-slate-100 opacity-90">From {{ .PriceDisplayInfoIrene.DisplayPrice.AmountPerStay.AmountRounded }}</span>

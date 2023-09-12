@@ -1,5 +1,5 @@
 <nav class="py-5 bg-[#013573]">
-    <form class="max-w-7xl mx-auto flex gap-4" action="/search" method="post">
+    <form class="max-w-7xl mx-auto px-1 md:px-2 lg:px-0 flex md:gap-2 lg:gap-4" action="/search" method="get">
         <label class="w-[30%] relative block">
             <input type="text" name="tab1Location" placeholder="Enter a destination or property" value="{{ .Location }}" class="p-3 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500" autocomplete="off">
             <span class="absolute right-0 top-3">

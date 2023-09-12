@@ -29,7 +29,7 @@ $('.t-datepicker').tDatePicker({
 
     // icon options
     iconArrowTop : true,
-    iconDate     : '<i class="fi fi-rr-calendar-lines text-2xl text-slate-500 pl-1.5 pt-1.5 mr-4"></i>',
+    iconDate     : '<i class="fi fi-rr-calendar-lines text-2xl text-slate-500 pt-1.5 mr-2"></i>',
     arrowPrev    : '&#x276E;',
     arrowNext    : '&#x276F;',
 

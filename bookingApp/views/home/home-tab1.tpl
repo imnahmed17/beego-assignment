@@ -5,12 +5,12 @@
         <h4 class="mb-4 text-xl tracking-wide">Get the best prices on 2,000,000+ properties, worldwide</h4>
     </div>
     <div class="px-12 mt-11 w-full bg-[#f8f7f9] rounded-2xl shadow-lg">
-        <form class="pt-10" action="/search" method="post">
+        <form class="pt-10" action="/search" method="get">
             <label class="w-full relative block">
                 <span class="absolute left-0 top-5">
-                    <i class="fi fi-rr-search text-2xl text-slate-500 pl-5"></i>
+                    <i class="fi fi-rr-search text-2xl text-slate-500 pl-4"></i>
                 </span>
-                <input type="text" name="tab1Location" placeholder="Enter a destination or property" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-16" autocomplete="off">
+                <input type="text" name="tab1Location" placeholder="Enter a destination or property" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-[52px]" autocomplete="off">
             </label>
             <div class="flex gap-4">
                 <label class="mt-4 w-1/2 relative block">
@@ -22,9 +22,9 @@
                 <div class="mt-4 w-1/2 relative">
                     <label class="relative block">
                         <span class="absolute left-0 top-5">
-                            <i class="fi fi-rr-users text-2xl text-slate-500 pl-5"></i>
+                            <i class="fi fi-rr-users text-2xl text-slate-500 pl-4"></i>
                         </span>
-                        <input id="tab1GuestInput" type="text" name="tab1Guests" placeholder="2 adults 1 room" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-16" readonly>
+                        <input id="tab1GuestInput" type="text" name="tab1Guests" placeholder="2 adults 1 room" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-[52px]" readonly>
                         <span class="absolute right-0 top-5">
                             <i class="fi fi-rr-angle-small-down text-xl text-slate-500 pr-5"></i>
                         </span>

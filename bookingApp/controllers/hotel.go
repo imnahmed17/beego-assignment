@@ -55,7 +55,7 @@ func (c *HotelController) SearchHotels() {
 			errChan <- err
 			return
 		}
-
+		fmt.Println("res:", res)
 		defer res.Body.Close()
 		body, err := io.ReadAll(res.Body)
 		if err != nil {
@@ -63,9 +63,10 @@ func (c *HotelController) SearchHotels() {
 			errChan <- err
 			return
 		}
-
+		fmt.Println("body:", body)
 		var allHotels struct {
-			Data []models.HotelData `json:"data"`
+			Message string `json:"message"`
+			Data 	[]models.HotelData `json:"data"`
 		}
 
 		if err = json.Unmarshal(body, &allHotels); err != nil {
@@ -79,6 +80,7 @@ func (c *HotelController) SearchHotels() {
 
 	extractedData := <- hotelDataChan
 	c.Data["Hotels"] = extractedData
+	c.Data["Message"] = extractedData
 
 	// for _, info := range extractedData {
 	// 	fmt.Println("Title:", info.DisplayName.Text)
