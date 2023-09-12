@@ -6,8 +6,12 @@ import (
 	"fmt"
 	"io"
 	"net/http"
+	// "net/url"
 	beego "github.com/beego/beego/v2/server/web"
 )
+
+var CheckIn string
+var CheckOut string
 
 type HotelController struct {
 	beego.Controller
@@ -22,7 +26,9 @@ func (c *HotelController) SearchHotels() {
 	location := c.GetString("tab1Location")
 	c.Data["Location"] = location
 	checkIn := c.GetString("t-start")
+	CheckIn = checkIn
 	checkOut := c.GetString("t-end")
+	CheckOut = checkOut
 	rooms := c.GetString("tab1Rooms")
 	adults := c.GetString("tab1Adults")
 
@@ -55,7 +61,7 @@ func (c *HotelController) SearchHotels() {
 			errChan <- err
 			return
 		}
-		fmt.Println("res:", res)
+		
 		defer res.Body.Close()
 		body, err := io.ReadAll(res.Body)
 		if err != nil {
@@ -63,10 +69,9 @@ func (c *HotelController) SearchHotels() {
 			errChan <- err
 			return
 		}
-		fmt.Println("body:", body)
+		
 		var allHotels struct {
-			Message string `json:"message"`
-			Data 	[]models.HotelData `json:"data"`
+			Data []models.HotelData `json:"data"`
 		}
 
 		if err = json.Unmarshal(body, &allHotels); err != nil {
@@ -90,7 +95,59 @@ func (c *HotelController) SearchHotels() {
 }
 
 func (c *HotelController) HotelDetails() {
-	// id, _ := c.GetInt(":id")
+	id := c.GetString("id")
+
+	hotelDetails, err := c.GetHotelDetails(id)
+    if err != nil {
+        c.Data["Error"] = "Error fetching hotel details: " + err.Error()
+        return
+    }
+
+	c.Data["HotelDetails"] = hotelDetails.Data
 
 	c.TplName = "hotel/hotel-details.tpl"
+}
+
+func (c *HotelController) GetHotelDetails(id string) (models.HotelDetails, error) {
+    url := "https://booking-com13.p.rapidapi.com/stays/properties/detail" +
+        "?id_detail=" + id +
+        "&checkin_date=" + CheckIn +
+        "&checkout_date=" + CheckOut +
+        "&language_code=en-us&currency_code=USD"
+
+	fmt.Println(url)
+
+    req, err := http.NewRequest("GET", url, nil)
+    if err != nil {
+		c.Data["Error"] = "Error creating request"
+        return models.HotelDetails{}, err
+    }
+
+    req.Header.Add("X-RapidAPI-Key", "772359a553msha653b68a858b937p1d633cjsndd93f0a3fbc0")
+    req.Header.Add("X-RapidAPI-Host", "booking-com13.p.rapidapi.com")
+
+    res, err := http.DefaultClient.Do(req)
+    if err != nil {
+		c.Data["Error"] = "Error making the request"
+        return models.HotelDetails{}, err
+    }
+
+    defer res.Body.Close()
+    body, err := io.ReadAll(res.Body)
+    if err != nil {
+		c.Data["Error"] = "Error reading the response"
+        return models.HotelDetails{}, err
+    }
+
+    var hotelDetails models.HotelDetails
+    if err = json.Unmarshal(body, &hotelDetails); err != nil {
+		c.Data["Error"] = "Error parsing JSON response"
+        return models.HotelDetails{}, err
+    }
+
+	fmt.Println("City:", hotelDetails.Data.BasicPropertyData[0].Location.City)
+	fmt.Println("Title:", hotelDetails.Data.GenericFacilityHighlight[0].Title)
+	fmt.Println("Description:", hotelDetails.Data.HotelTranslation[0].Description)
+
+    return hotelDetails, nil
 }

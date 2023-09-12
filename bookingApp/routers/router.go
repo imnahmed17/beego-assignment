@@ -8,5 +8,5 @@ import (
 func init() {
     beego.Router("/", &controllers.HotelController{})
 	beego.Router("/search", &controllers.HotelController{}, "get:SearchHotels")
-	beego.Router("/hotels/:id", &controllers.HotelController{}, "get:HotelDetails")
+	beego.Router("/hotel", &controllers.HotelController{}, "get:HotelDetails")
 }

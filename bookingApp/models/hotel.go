@@ -36,3 +36,22 @@ type HotelData struct {
 		} `json:"displayPrice"`
 	} `json:"priceDisplayInfoIrene"`
 }
+
+type HotelDetails struct {
+	Data struct {
+		BasicPropertyData []struct {
+			Location struct {
+				City string `json:"city"`
+			} `json:"location"`
+		} `json:"BasicPropertyData"`
+		GenericFacilityHighlight []struct {
+			Title string `json:"title"`
+		} `json:"GenericFacilityHighlight"`
+		HotelTranslation []struct {
+			Description string `json:"description"`
+		} `json:"HotelTranslation"`
+		RTRoomPhoto []struct {
+			PhotoURI      string `json:"photoUri"`
+		} `json:"RTRoomPhoto"`
+	} `json:"data"`
+}
