@@ -8,64 +8,45 @@
         <form class="pt-10">
             <div class="flex gap-4">
                 <label class="w-full relative block">
-                    <span class="absolute left-0 top-5">
-                        <i class="fi fi-rs-plane-departure text-2xl text-slate-500 pl-5"></i>
+                    <span class="absolute left-0 top-4">
+                        <i class="fi fi-rs-plane-departure text-2xl text-slate-500 pl-4"></i>
                     </span>
-                    <input type="text" name="tab3Source" placeholder="Source airport" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-16">
+                    <input type="text" name="tab3Source" placeholder="Source airport" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-[52px]">
                 </label>
                 <label class="w-full relative block">
-                    <span class="absolute left-0 top-5">
-                        <i class="fi fi-rs-plane-arrival text-2xl text-slate-500 pl-5"></i>
+                    <span class="absolute left-0 top-4">
+                        <i class="fi fi-rs-plane-arrival text-2xl text-slate-500 pl-4"></i>
                     </span>
-                    <input type="text" name="tab3Destination" placeholder="Destination airport" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-16">
+                    <input type="text" name="tab3Destination" placeholder="Destination airport" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-[52px]">
+                </label>
+            </div>
+            <div class="flex gap-4">
+                <label class="mt-4 w-full relative block">
+                    <span class="absolute left-0 top-[18px]">
+                        <i class="fi fi-rr-calendar-lines text-2xl text-slate-500 pl-4"></i>
+                    </span>
+                    <input type="text" name="tab3Departure_date" id="departure_date" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-[52px]">
+                </label>
+                <label class="mt-4 w-full relative block">
+                    <span class="absolute left-0 top-[18px]">
+                        <i class="fi fi-rr-calendar-lines text-2xl text-slate-500 pl-4"></i>
+                    </span>
+                    <input type="text" name="tab3Return_date" id="return_date" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-[52px]">
                 </label>
             </div>
             <div class="flex gap-4">
                 <label class="mt-4 w-full relative block">
                     <span class="absolute left-0 top-5">
-                        <i class="fi fi-rs-search text-2xl text-slate-500 pl-5"></i>
+                        <i class="fi fi-rs-person-simple text-2xl text-slate-500 pl-2"></i>
                     </span>
-                    <input type="text" placeholder="Dhaka" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-16">
+                    <input type="number" name="tab3Adults" placeholder="1" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-[52px]">
                 </label>
                 <label class="mt-4 w-full relative block">
-                    <select name="tab3ItineraryType" id="" class="p-5 w-full bg-white rounded-md outline-none border border-slate-300">
-                        <option value="ONE_WAY">One way</option>
-                        <option value="ROUND_TRIP">Round trip</option>
-                    </select>
-                </label>
-            </div>
-            <div class="flex gap-4">
-                <label class="mt-4 w-full relative block">
-                    <span class="absolute left-0 top-5">
-                        <i class="fi fi-rs-person-simple text-2xl text-slate-500 pl-5"></i>
-                    </span>
-                    <input type="number" name="tab3Adults" placeholder="1" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-16">
-                </label>
-                <label class="mt-4 w-full relative block">
-                    <span class="absolute left-0 top-5">
-                        <i class="fi fi-rr-person-walking-with-cane text-2xl text-slate-500 pl-5"></i>
-                    </span>
-                    <input type="number" name="tab3Seniors" placeholder="1" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-16">
-                </label>
-            </div>
-            <div class="flex gap-4">
-                <label class="mt-4 w-full relative block">
-                    <select name="tab3SortOrder" id="" class="p-5 w-full bg-white rounded-md outline-none border border-slate-300">
-                        <option value="ML_BEST_VALUE">Ml best value</option>
-                        <option value="DURATION">Duration</option>
-                        <option value="PRICE">Price</option>
-                        <option value="EARLIEST_OUTBOUND_DEPARTURE">Earliest outbound departure</option>
-                        <option value="EARLIEST_OUTBOUND_ARRIVAL">Earliest outbound arrival</option>
-                        <option value="LATEST_OUTBOUND_DEPARTURE">Latest outbound departure</option>
-                        <option value="LATEST_OUTBOUND_ARRIVAL">Latest outbound arrival</option>
-                    </select>
-                </label>
-                <label class="mt-4 w-full relative block">
-                    <select name="tab3ClassOfService" id="" class="p-5 w-full bg-white rounded-md outline-none border border-slate-300">
-                        <option value="ECONOMY">Economy</option>
-                        <option value="PREMIUM_ECONOMY">Premium economy</option>
-                        <option value="BUSINESS">Business</option>
-                        <option value="FIRST">First</option>
+                    <select name="tab3ClassOfService" id="" class="py-5 px-3 w-full bg-white rounded-md outline-none border border-slate-300">
+                        <option value="Economy">Economy</option>
+                        <option value="Premium">Premium</option>
+                        <option value="Business">Business</option>
+                        <option value="First">First</option>
                     </select>
                 </label>
             </div>

@@ -10,7 +10,7 @@ const tab1AdultValue = document.getElementById("tab1AdultValue");
 const tab1AdultInput = document.getElementById("tab1AdultInput");
 
 let counter1 = 1;
-let counter2 = 2;
+let counter2 = 1;
 
 tab1RoomPlusBtn.addEventListener("click", function () {
     counter1++;

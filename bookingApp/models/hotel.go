@@ -43,6 +43,7 @@ type HotelDetails struct {
 			Location struct {
 				City string `json:"city"`
 			} `json:"location"`
+			Name string `json:"name"`
 		} `json:"BasicPropertyData"`
 		GenericFacilityHighlight []struct {
 			Title string `json:"title"`
@@ -50,8 +51,13 @@ type HotelDetails struct {
 		HotelTranslation []struct {
 			Description string `json:"description"`
 		} `json:"HotelTranslation"`
-		RTRoomPhoto []struct {
-			PhotoURI      string `json:"photoUri"`
-		} `json:"RTRoomPhoto"`
+	} `json:"data"`
+}
+
+type HotelPhotos struct {
+	Data struct {
+		Photos []struct {
+			PhotoUri string `json:"photoUri"`
+		} `json:"photos"`
 	} `json:"data"`
 }

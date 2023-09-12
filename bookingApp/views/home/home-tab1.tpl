@@ -24,7 +24,7 @@
                         <span class="absolute left-0 top-5">
                             <i class="fi fi-rr-users text-2xl text-slate-500 pl-4"></i>
                         </span>
-                        <input id="tab1GuestInput" type="text" name="tab1Guests" placeholder="2 adults 1 room" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-[52px]" readonly>
+                        <input id="tab1GuestInput" type="text" name="tab1Guests" placeholder="1 adult 1 room" class="p-5 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-[52px]" readonly>
                         <span class="absolute right-0 top-5">
                             <i class="fi fi-rr-angle-small-down text-xl text-slate-500 pr-5"></i>
                         </span>

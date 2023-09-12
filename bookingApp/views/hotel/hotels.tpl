@@ -3,10 +3,10 @@
 {{ template "hotel/hotel-nav.tpl" . }}
 
 <h2 class="mt-3 text-3xl font-medium text-center text-[#013573]">
-    Vacation Rentals in {{ if lt (len .Location) 4 }}
-        <span class="uppercase">{{ .Location }}</span>
+    Vacation Rentals in {{ if lt (len .Destination) 4 }}
+        <span class="uppercase">{{ .Destination }}</span>
     {{ else }}
-        <span class="capitalize">{{ .Location }}</span>
+        <span class="capitalize">{{ .Destination }}</span>
     {{ end }}
 </h2>
 

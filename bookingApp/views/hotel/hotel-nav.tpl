@@ -1,7 +1,7 @@
 <nav class="py-5 bg-[#013573]">
     <form class="max-w-7xl mx-auto px-1 md:px-2 lg:px-0 flex md:gap-2 lg:gap-4" action="/search" method="get">
         <label class="w-[30%] relative block">
-            <input type="text" name="tab1Location" placeholder="Enter a destination or property" value="{{ .Location }}" class="p-3 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500" autocomplete="off">
+            <input type="text" name="tab1Location" placeholder="Enter a destination or property" value="{{ .Destination }}" class="p-3 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500" autocomplete="off">
             <span class="absolute right-0 top-3">
                 <i class="fi fi-rr-search text-2xl text-[#013573] pr-3"></i>
             </span>
@@ -17,7 +17,7 @@
                 <span class="absolute left-0 top-3">
                     <i class="fi fi-rr-users text-2xl text-[#013573] pl-3.5"></i>
                 </span>
-                <input id="tab1GuestInput" type="text" name="tab1Guests" placeholder="2 adults 1 room" class="p-3 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-16" readonly>
+                <input id="tab1GuestInput" type="text" name="tab1Guests" placeholder="1 adult 1 room" class="p-3 w-full rounded-md outline outline-1 outline-slate-300 font-medium placeholder:text-slate-500 pl-[52px]" readonly>
                 <span class="absolute right-0 top-3">
                     <i class="fi fi-rr-angle-small-down text-xl text-[#013573] pr-2.5"></i>
                 </span>
