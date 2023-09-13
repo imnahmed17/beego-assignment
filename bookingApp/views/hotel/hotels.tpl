@@ -6,7 +6,7 @@
     Vacation Rentals in {{ if lt (len .Destination) 4 }}
         <span class="uppercase">{{ .Destination }}</span>
     {{ else }}
-        <span class="capitalize">{{ .Destination }}</span>
+        <span class="capitalize">{{ .Destination }} and vice versa</span>
     {{ end }}
 </h2>
 
