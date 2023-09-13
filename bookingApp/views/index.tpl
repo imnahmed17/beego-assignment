@@ -16,15 +16,11 @@
                     <i class="fi fi-ss-hotel text-lg flex items-center"></i>
                     <h6 class="tracking-wide">Hotels &amp; Homes</h6>
                 </div>
-                <div class="pb-2 flex items-center gap-1.5 cursor-pointer tab-item" onclick="openTab('tab2')">
-                    <i class="fi fi-ss-restaurant text-lg flex items-center"></i>
-                    <h6 class="tracking-wide">Restaurants</h6>
-                </div>
                 <div>
                     <div class="absolute -top-3.5 pl-6">
                         <span class="p-1 bg-[#E12D2D] text-[10px] text-white rounded-sm">New!</span>
                     </div>
-                    <div class="pb-2 flex items-center gap-1.5 cursor-pointer tab-item" onclick="openTab('tab3')">
+                    <div class="pb-2 flex items-center gap-1.5 cursor-pointer tab-item" onclick="openTab('tab2')">
                         <i class="fi fi-ss-plane-departure text-lg flex items-center"></i>
                         <h6 class="tracking-wide">Flights</h6>
                     </div>
@@ -32,7 +28,6 @@
             </div>
             {{ template "home/home-tab1.tpl" . }}
             {{ template "home/home-tab2.tpl" . }}
-            {{ template "home/home-tab3.tpl" . }}
         </div>
     </div>
 </section>

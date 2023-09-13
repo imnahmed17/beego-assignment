@@ -4,8 +4,8 @@
         <h3 class="pt-5 mb-1 text-2xl font-bold">HOTELS, RESORTS, HOSTELS & MORE</h3>
         <h4 class="mb-4 text-xl tracking-wide">Get the best prices on 2,000,000+ properties, worldwide</h4>
     </div>
-    <div class="px-12 mt-11 w-full bg-[#f8f7f9] rounded-2xl shadow-lg">
-        <form class="pt-10" action="/search" method="get">
+    <div class="px-12 mt-11 w-full bg-[#f8f7f9] rounded-2xl shadow-lg border">
+        <form class="pt-10" action="/search-hotel" method="get">
             <label class="w-full relative block">
                 <span class="absolute left-0 top-5">
                     <i class="fi fi-rr-search text-2xl text-slate-500 pl-4"></i>
