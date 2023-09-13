@@ -10,7 +10,7 @@
         {{ $limit := 1 }}
         {{ range $index, $item := .Flights.Routes }}
             {{ if lt $index $limit }}
-            <h2>from {{ $item.Origin.CityCode }} to {{ $item.Destination.CityCode }}</h2>
+            <h2>from {{ $item.Origin.CityCode }} to {{ $item.Destination.CityCode }} and vice versa</h2>
             {{ end }}
         {{ end }}
     </div>
