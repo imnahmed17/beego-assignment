@@ -24,7 +24,7 @@
             {{ $limit := 1 }}
             {{ range $index, $photo := .HotelPhotos }}
                 {{ if lt $index $limit }}
-                    <img class="h-full" src="https://cf.bstatic.com{{ $photo.PhotoUri }}" alt="">
+                    <img class="w-full h-96" src="https://cf.bstatic.com{{ $photo.PhotoUri }}" alt="">
                 {{ end }}
             {{ end }}
         </div>
@@ -32,7 +32,7 @@
             <div class="grid grid-cols-2 gap-2">
                 {{ range $index, $photo := .HotelPhotos }}
                     {{ if and (ge $index 1) (le $index 4) }}
-                        <img class="w-full h-full" src="https://cf.bstatic.com{{ $photo.PhotoUri }}" alt="">
+                        <img class="w-full h-[188px]" src="https://cf.bstatic.com{{ $photo.PhotoUri }}" alt="">
                     {{ end }}
                 {{ end }}
             </div>
