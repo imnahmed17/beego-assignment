@@ -11,7 +11,7 @@
 <section>
     <div class="h-[320px] bg-no-repeat bg-center bg-cover" style="background-image: url(https://cdn6.agoda.net/images/MVC/default/background_image/illustrations/bg-agoda-homepage.png);">
         <div class="max-w-6xl mx-auto">
-            <div class="pt-3 w-10/12 lg:w-1/4 absolute top-40 lg:top-56 left-[8.3%] right-[8.3%] lg:left-[38%] lg:right-[38%] z-20 bg-white rounded-lg flex justify-center gap-6 lg:gap-12 shadow-lg">
+            <div class="pt-3 w-10/12 lg:w-1/4 absolute top-40 lg:top-56 left-[8.3%] right-[8.3%] lg:left-[37.5%] lg:right-[37.5%] z-20 bg-white rounded-lg flex justify-center gap-6 lg:gap-12 shadow-lg">
                 <div class="pb-2 flex items-center gap-1 cursor-pointer tab-item active" onclick="openTab('tab1')">
                     <i class="fi fi-ss-hotel text-lg flex items-center"></i>
                     <h6 class="tracking-wide">Hotels &amp; Homes</h6>
