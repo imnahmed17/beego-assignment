@@ -1,6 +1,6 @@
 <!-- tab 1 div -->
 <div id="tab1" class="relative tab-content" style="display: block;">
-    <div class="text-center text-white">
+    <div class="px-4 h-36 lg:h-fit text-center text-white">
         <h3 class="pt-5 mb-1 text-2xl font-bold">HOTELS, RESORTS, HOSTELS & MORE</h3>
         <h4 class="mb-4 text-xl tracking-wide">Get the best prices on 2,000,000+ properties, worldwide</h4>
     </div>

@@ -25,6 +25,12 @@ func (c *FlightController) SearchFlights() {
 	adults := c.GetString("tab2Adults")
 	c.Data["Adults"] = adults
 	classOfService := c.GetString("tab2ClassOfService")
+
+	if source == "" || destination == "" || departure_date == "" || return_date == "" || adults == "" || classOfService == "" {
+		c.Data["Error"] = "Please Fill the all Required Field"
+        c.Redirect("/", 302)
+        return
+	}
 	
 	url := "https://booking-com13.p.rapidapi.com/flights/return" +
 		"?location_from=" + source +
@@ -47,13 +53,12 @@ func (c *FlightController) SearchFlights() {
 	req.Header.Add("X-RapidAPI-Host", "booking-com13.p.rapidapi.com")
 
 	flightDataChan := make(chan models.FlightData)
-	errChan := make(chan error)
 
 	go func() {
 		res, err := http.DefaultClient.Do(req)
 		if err != nil {
 			c.Data["Error"] = "Error making the request"
-			errChan <- err
+			flightDataChan <- models.FlightData{}
 			return
 		}
 		
@@ -61,14 +66,14 @@ func (c *FlightController) SearchFlights() {
 		body, err := io.ReadAll(res.Body)
 		if err != nil {
 			c.Data["Error"] = "Error reading the response"
-			errChan <- err
+			flightDataChan <- models.FlightData{}
 			return
 		}
 		
 		var allFlights models.FlightData
 		if err = json.Unmarshal(body, &allFlights); err != nil {
 			c.Data["Error"] = "Error parsing JSON response"
-			errChan <- err
+			flightDataChan <- models.FlightData{}
 			return
 		}
 

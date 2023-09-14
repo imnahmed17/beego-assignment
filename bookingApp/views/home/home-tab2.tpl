@@ -1,6 +1,6 @@
 <!-- tab 2 div -->
 <div id="tab2" class="relative tab-content" style="display: none;">
-    <div class="text-center text-white">
+    <div class="px-4 h-36 lg:h-fit text-center text-white">
         <h3 class="pt-5 mb-1 text-2xl font-bold">BOOK A HOME ON AGODA HOMES</h3>
         <h4 class="mb-4 text-xl tracking-wide">More spacious. More local. More of why you travel.</h4>
     </div>
