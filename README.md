@@ -23,6 +23,7 @@ go install github.com/beego/beego/v2@latest
 go install github.com/beego/bee/v2@latest
 code .
 ```
+
 3. After that type `Ctrl+Shift+P` and select `Go: Install/Update Tools`. Mark all than press ok.
 
 4. Clone this repository:
@@ -32,7 +33,10 @@ cd beego-assignment
 code .
 cd bookingApp
 ```
-5. Run this application:
+
+5. Project setup:
+
+6. Run this application:
 ```bash
 bee run
 ```

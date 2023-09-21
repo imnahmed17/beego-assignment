@@ -12,12 +12,17 @@ import (
 var CheckIn string
 var CheckOut string
 var Destination string
+var rapidApiKey string
+var rapidApiHost string
 
 type HotelController struct {
 	beego.Controller
 }
 
 func (c *HotelController) SearchHotels() {
+	rapidApiKey, _ = beego.AppConfig.String("rapidapikey")
+	rapidApiHost, _ = beego.AppConfig.String("rapidapihost")
+
 	Destination = c.GetString("tab1Location")
 	c.Data["Destination"] = Destination
 	checkIn := c.GetString("t-start")
@@ -49,13 +54,14 @@ func (c *HotelController) SearchHotels() {
 		return
 	}
 
-	req.Header.Add("X-RapidAPI-Key", "04d45596a9mshafcf88d1434dc85p1fc8acjsnc24ebc76b973")
-	req.Header.Add("X-RapidAPI-Host", "booking-com13.p.rapidapi.com")
+	req.Header.Add("X-RapidAPI-Key", rapidApiKey)
+	req.Header.Add("X-RapidAPI-Host", rapidApiHost)
 
 	hotelDataChan := make(chan models.HotelData)
 
 	go func() {
 		res, err := http.DefaultClient.Do(req)
+		fmt.Println(res)
 		if err != nil {
 			c.Data["Error"] = "Error making the request"
 			hotelDataChan <- models.HotelData{}
@@ -131,8 +137,8 @@ func GetHotelDetails(id string) (models.HotelDetails, error) {
         return models.HotelDetails{}, err
     }
 
-    req.Header.Add("X-RapidAPI-Key", "04d45596a9mshafcf88d1434dc85p1fc8acjsnc24ebc76b973")
-    req.Header.Add("X-RapidAPI-Host", "booking-com13.p.rapidapi.com")
+    req.Header.Add("X-RapidAPI-Key", rapidApiKey)
+    req.Header.Add("X-RapidAPI-Host", rapidApiHost)
 
     res, err := http.DefaultClient.Do(req)
     if err != nil {
@@ -165,8 +171,8 @@ func GetHotelPhotos(id string) (models.HotelPhotos, error) {
         return models.HotelPhotos{}, err
     }
 
-    req.Header.Add("X-RapidAPI-Key", "04d45596a9mshafcf88d1434dc85p1fc8acjsnc24ebc76b973")
-    req.Header.Add("X-RapidAPI-Host", "booking-com13.p.rapidapi.com")
+    req.Header.Add("X-RapidAPI-Key", rapidApiKey)
+    req.Header.Add("X-RapidAPI-Host", rapidApiHost)
 
     res, err := http.DefaultClient.Do(req)
     if err != nil {

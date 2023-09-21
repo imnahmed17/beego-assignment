@@ -14,6 +14,9 @@ type FlightController struct {
 }
 
 func (c *FlightController) SearchFlights() {
+	rapidApiKey, _ := beego.AppConfig.String("rapidapikey")
+	rapidApiHost, _ := beego.AppConfig.String("rapidapihost")
+
 	source := c.GetString("tab2Source")
 	c.Data["Location_To"] = source
 	destination := c.GetString("tab2Destination")
@@ -49,8 +52,8 @@ func (c *FlightController) SearchFlights() {
 		return
 	}
 
-	req.Header.Add("X-RapidAPI-Key", "04d45596a9mshafcf88d1434dc85p1fc8acjsnc24ebc76b973")
-	req.Header.Add("X-RapidAPI-Host", "booking-com13.p.rapidapi.com")
+	req.Header.Add("X-RapidAPI-Key", rapidApiKey)
+	req.Header.Add("X-RapidAPI-Host", rapidApiHost)
 
 	flightDataChan := make(chan models.FlightData)
 
