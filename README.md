@@ -36,6 +36,17 @@ cd bookingApp
 
 5. Project setup:
 
+Create a `conf` folder inside `bookingApi` folder as well as create a `app.conf` file inside `conf` folder (`bookingApi/conf/app.conf`). Now, add these below lines to `app.conf` file:
+```bash
+appname = bookingApi
+httpport = 8080
+runmode = dev
+
+rapidapikey = your_api_key
+rapidapihost = your_api_host
+```
+To get RapidApi key and host browse [Booking.com API | RapidAPI](https://rapidapi.com/ntd119/api/booking-com13?fbclid=IwAR2aC91bQeRddPSQZ7szn93Ck7hMdmRUwpZ9EBHQf-RPps0lua_Qe3jLd8I).
+
 6. Run this application:
 ```bash
 bee run
